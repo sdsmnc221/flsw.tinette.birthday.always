@@ -253,7 +253,7 @@ export default function FloatingTinette() {
         zIndex: 100,
         opacity: 1,
         left: 0,
-        top:0,
+        top: 0,
         transform: "translate(-50%, -50%)", // Centrer l'élément
         mixBlendMode: "screen", // Effet de fusion pour ne pas cacher le texte
       }}

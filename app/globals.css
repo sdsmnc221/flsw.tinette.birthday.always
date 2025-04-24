@@ -39,9 +39,38 @@
 }
 
 .section {
-  @apply min-h-screen w-full flex flex-col justify-center items-center px-4 md:px-8 lg:px-16 relative;
+  @apply w-full flex flex-col justify-center items-center px-4 md:px-8 lg:px-16 relative;
   padding-top: 5rem;
   padding-bottom: 5rem;
+}
+
+/* Ajuster la hauteur de la section sur desktop */
+@media (min-width: 768px) {
+  .section {
+    min-height: 100vh;
+  }
+}
+
+/* Ajuster la hauteur de la section sur mobile */
+@media (max-width: 767px) {
+  .section {
+    min-height: auto;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  /* Ajustement spécifique pour la première section */
+  #introduction {
+    padding-top: 2rem;
+  }
+
+  /* Ajuster la hauteur du conteneur dans la première section */
+  #introduction .h-screen {
+    height: auto !important;
+    min-height: calc(100vh - 4rem);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
 }
 
 .title-reveal span {
@@ -58,11 +87,36 @@
   transform: scale(1.1);
 }
 
+/* Ajouter ces styles pour les pattes de chat */
 .paw-print {
-  @apply absolute w-4 h-4 opacity-0 pointer-events-none z-30;
+  @apply fixed w-4 h-4 opacity-0 pointer-events-none z-50;
   background-image: url("/paw-print.svg");
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  20% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Masquer les pattes sur mobile pour économiser les ressources */
+@media (max-width: 767px) {
+  .paw-print {
+    display: none !important;
+  }
 }
 
 .fade-in {

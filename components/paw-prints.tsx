@@ -8,7 +8,7 @@ export default function PawPrints() {
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       // Only create paw prints occasionally
-      if (Math.random() > 0.05) return
+      if (Math.random() > 0.24) return
 
       const newPawPrint = {
         id: Date.now(),
@@ -24,10 +24,11 @@ export default function PawPrints() {
       }, 2000)
     }
 
-    window.addEventListener("mousemove", handleMouseMove)
+    // Ajouter l'écouteur d'événements au document entier
+    document.addEventListener("mousemove", handleMouseMove)
 
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove)
+      document.removeEventListener("mousemove", handleMouseMove)
     }
   }, [])
 
