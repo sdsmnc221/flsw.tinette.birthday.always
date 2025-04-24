@@ -551,3 +551,10 @@ a.button {
     margin-right: auto;
   }
 }
+
+/* Ajouter cette règle à la fin du fichier */
+@media (max-width: 767px) {
+  .fixed.pointer-events-none {
+    display: none !important;
+  }
+}

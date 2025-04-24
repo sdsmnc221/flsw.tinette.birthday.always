@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef } from "react"
 import Image from "next/image"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
@@ -9,12 +9,8 @@ import { useMobile } from "@/hooks/use-mobile"
 export default function FloatingTinette() {
   const tinetteRef = useRef<HTMLDivElement>(null)
   const isMobile = useMobile()
-  const [isInitialized, setIsInitialized] = useState(false)
 
   useEffect(() => {
-    // Marquer comme initialisé après le premier rendu
-    setIsInitialized(true)
-
     // Ne pas exécuter l'animation sur mobile
     if (typeof window === "undefined" || !tinetteRef.current || isMobile) return
 
@@ -244,8 +240,8 @@ export default function FloatingTinette() {
     }
   }, [isMobile])
 
-  // Ne pas rendre le composant sur mobile ou avant l'initialisation
-  if (isMobile || !isInitialized) return null
+  // Ne pas rendre le composant sur mobile
+  if (isMobile) return null
 
   return (
     <div
@@ -256,6 +252,8 @@ export default function FloatingTinette() {
         height: "auto",
         zIndex: 100,
         opacity: 1,
+        left: 0,
+        top:0,
         transform: "translate(-50%, -50%)", // Centrer l'élément
         mixBlendMode: "screen", // Effet de fusion pour ne pas cacher le texte
       }}
