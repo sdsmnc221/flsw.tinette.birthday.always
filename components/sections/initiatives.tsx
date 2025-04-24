@@ -283,7 +283,7 @@ export default function Initiatives() {
                   <div className="text-red-400 text-center p-4">
                     <p>{iframeError}</p>
                     <Link
-                      href="https://www.canva.com/design/DAGVpc13pnI/RQ_vmzCl2DpkHZF0rAQ-jg/watch"
+                      href="https://readymag.website/u1900695161/5091714/"
                       target="_blank"
                       className="mt-4 inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors"
                     >
@@ -303,11 +303,11 @@ export default function Initiatives() {
                 </p>
               </div>
               <Link
-                href="https://www.canva.com/design/DAGVpc13pnI/RQ_vmzCl2DpkHZF0rAQ-jg/watch"
+                href="https://readymag.website/u1900695161/5091714/"
                 target="_blank"
                 className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors"
               >
-                Voir en plein écran <ExternalLink className="ml-1 w-4 h-4" />
+                Visiter <ExternalLink className="ml-1 w-4 h-4" />
               </Link>
             </div>
           </div>

@@ -3,7 +3,10 @@
 import { useEffect, useRef, useState } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import FloatingTinette from "@/components/floating-tinette"
+import dynamic from "next/dynamic"
+const FloatingTinette = dynamic(() => import("@/components/floating-tinette"), {
+  ssr: false,
+})
 import Introduction from "@/components/sections/introduction"
 import Story from "@/components/sections/story"
 import Philosophy from "@/components/sections/philosophy"
